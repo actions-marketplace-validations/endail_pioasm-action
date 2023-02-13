@@ -1,0 +1,23 @@
+name: "pioasm-action"
+description: "Compiles PIO files"
+inputs:
+
+  format:
+    description: "pioasm output format: c-sdk (default), python, or hex"
+    required: true
+    default: c-sdk
+
+  in:
+    description: "input .pio file"
+    required: true
+
+outputs:
+  out:
+    description: "output file"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.format }}
+    - ${{ inputs.in }}
