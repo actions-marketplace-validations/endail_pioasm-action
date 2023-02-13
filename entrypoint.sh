@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 apt update
 apt install -y git make cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
