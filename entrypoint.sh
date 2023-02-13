@@ -17,5 +17,5 @@ make
 
 cd ..
 
-pioasm_build/pioasm -o "$1" "$2" >> temp
-echo "out=$(cat temp)" >> $GITHUB_OUTPUT
+pioasm_build/pioasm -o "$1" "$2" >> out.pio.h
+echo "out=$(<out.pio.h)" >> $GITHUB_OUTPUT
