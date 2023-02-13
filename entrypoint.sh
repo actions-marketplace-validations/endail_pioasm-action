@@ -15,5 +15,7 @@ cd pioasm_build
 cmake $PICO_SDK_PATH/tools/pioasm
 make
 
-./pioasm -o "$1" "$2" >> temp
+cd ..
+
+pioasm_build/pioasm -o "$1" "$2" >> temp
 echo "out=$(cat temp)" >> $GITHUB_OUTPUT
