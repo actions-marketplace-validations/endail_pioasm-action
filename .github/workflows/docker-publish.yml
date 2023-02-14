@@ -23,4 +23,4 @@ jobs:
           context: "{{defaultContext}}:image"
           file: Dockerfile
           push: true
-          tags: user/app:latest
+          tags: endail/pioasm-action-image:latest
