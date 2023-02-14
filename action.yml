@@ -1,23 +1,21 @@
-name: "pioasm-action"
-description: "Compiles PIO files"
+name: pioasm-action
+author: Daniel Robertson
+description: Compiles PIO files
+
 inputs:
 
-  format:
-    description: "pioasm output format: c-sdk (default), python, or hex"
-    required: true
-    default: c-sdk
-
-  in:
-    description: "input .pio file"
+  files:
+    description: Glob of files to compile
     required: true
 
-outputs:
-  out:
-    description: "output file"
+  outdir:
+    description: Path to directory where compiled PIO files are stored
+    required: false
+    default: ""
 
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.format }}
-    - ${{ inputs.in }}
+    - ${{ inputs.files }}
+    - ${{ inputs.outdir }}
