@@ -14,7 +14,7 @@ make
 cd ..
 
 # if $2 is empty, set outpath to current dir of piofile
-if [ ! -z "$2" ]; do
+if [ ! -z "$2" ]; then
     outpath="."
 else
     outpath="$2"
