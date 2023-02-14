@@ -12,4 +12,5 @@ mkdir pioasm_build && \
 cd pioasm_build && \
 cmake "$PICO_SDK_PATH/tools/pioasm" && \
 make && \
+export PIOASM_PATH="$(pwd)" && \
 cd ..'

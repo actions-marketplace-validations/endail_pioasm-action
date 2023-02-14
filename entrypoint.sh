@@ -16,7 +16,7 @@
 #make
 #cd ..
 
-pioasm_build/pioasm -o "$1" "$2" >> out.pio.h
+"$PIOASM_PATH/pioasm" -o "$1" "$2" >> out.pio.h
 
 echo "out<<EOF" >> $GITHUB_OUTPUT
 echo "$(cat out.pio.h)" >> $GITHUB_OUTPUT
