@@ -1,3 +1,12 @@
 #!/bin/bash
 
-git submodule update --init pico-sdk
+cd pico-sdk
+git submodule update --init
+export PICO_SDK_PATH="$(pwd)"
+cd ..
+
+mkdir pioasm_build
+cd pioasm_build
+cmake pioasm_build/$PICO_SDK_PATH/tools/pioasm
+make pioasm_build
+cd ..
