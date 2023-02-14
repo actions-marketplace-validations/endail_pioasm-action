@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#apt update
+apt update
 #apt install -y git make cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+apt install -y git make cmake
 
 git clone https://github.com/raspberrypi/pico-sdk.git --branch master
 cd pico-sdk
