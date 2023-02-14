@@ -20,7 +20,7 @@ else
     outpath="$2"
 fi
 
-for piofile in "$1"; do
+for piofile in $1; do
 
     if [ ! -f "$piofile" ]; then
         echo "$piofile not found; skipping"
