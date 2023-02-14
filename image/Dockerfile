@@ -10,5 +10,5 @@ RUN git clone https://github.com/raspberrypi/pico-sdk.git --branch master
 #RUN cmake ..pico-sdk/tools/pioasm
 #RUN make
 
-RUN --mount-type=bind,target=/pioasm_build,source=pioasm_build \
+RUN --mount=type=bind,target=/pioasm_build,source=pioasm_build \
     mkdir pioasm_build && cd pioasm_build && cmake ../pico-sdk/tools/pioasm && make
