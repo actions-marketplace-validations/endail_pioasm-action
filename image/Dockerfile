@@ -11,6 +11,6 @@ git submodule update --init && \
 cd .. && \
 mkdir pioasm_build && \
 cd pioasm_build && \
-cmake $PICO_SDK_PATH/tools/pioasm && \
+cmake "$PICO_SDK_PATH/tools/pioasm" && \
 make && \
 cd ..'
