@@ -1,8 +1,7 @@
 #!/bin/bash
 
 apt update
-#apt install -y git make cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
-apt install -y git make cmake
+apt install -y git make cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
 
 git clone https://github.com/raspberrypi/pico-sdk.git --branch master
 cd pico-sdk
@@ -15,7 +14,6 @@ mkdir pioasm_build
 cd pioasm_build
 cmake $PICO_SDK_PATH/tools/pioasm
 make
-
 cd ..
 
 pioasm_build/pioasm -o "$1" "$2" >> out.pio.h
