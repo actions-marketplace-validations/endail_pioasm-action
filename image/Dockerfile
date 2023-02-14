@@ -5,7 +5,7 @@ RUN apt install -y git make cmake gcc-arm-none-eabi libnewlib-arm-none-eabi buil
 
 RUN git clone https://github.com/raspberrypi/pico-sdk.git --branch master
 #RUN cd pico-sdk
-RUN git submodule update --init pico-sdk
+# RUN git submodule update --init pico-sdk
 
 RUN export PICO_SDK_PATH="$(pwd)/pico-sdk"
 #RUN cd ..
