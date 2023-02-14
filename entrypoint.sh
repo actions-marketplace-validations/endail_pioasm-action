@@ -2,7 +2,6 @@
 
 git clone https://github.com/raspberrypi/pico-sdk.git --branch master
 cd pico-sdk
-git submodule update --init
 export PICO_SDK_PATH="$(pwd)"
 cd ..
 
