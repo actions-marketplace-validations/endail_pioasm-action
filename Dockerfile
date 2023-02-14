@@ -1,6 +1,6 @@
 # Container image that runs your code
 #FROM ubuntu:latest
-FROM endail:pioasm-action-image
+FROM endail/pioasm-action-image
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
