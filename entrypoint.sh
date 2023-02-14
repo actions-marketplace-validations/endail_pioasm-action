@@ -16,6 +16,9 @@
 #make
 #cd ..
 
+ls -al
+ls -al ..
+
 "$PIOASM_PATH/pioasm" -o "$1" "$2" >> out.pio.h
 
 echo "out<<EOF" >> $GITHUB_OUTPUT
