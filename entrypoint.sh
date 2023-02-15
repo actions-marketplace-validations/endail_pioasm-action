@@ -15,18 +15,23 @@ fi
 # set proper extension
 case $in_format in
     c-sdk)
-        ext=".h"
+        ext="h"
         ;;
     python)
-        ext=".py"
+        ext="py"
         ;;
     hex)
-        ext=".hex"
+        ext="hex"
         ;;
     *)
         exit 1
         ;;
 esac
+
+echo "PIOASM_PATH is $PIOASM_PATH"
+echo "Looking for files in $in_files"
+echo "Using format $in_format with extension $ext"
+echo "Writing to $in_outdir"
 
 for piofile in $in_files; do
 
