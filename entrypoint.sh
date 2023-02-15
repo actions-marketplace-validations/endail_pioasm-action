@@ -28,9 +28,7 @@ case $in_format in
         ;;
 esac
 
-echo "PIOASM_DIR is $PIOASM_DIR"
-ls $PIOASM_DIR
-ls "$PIOASM_DIR/.."
+echo "PIOASM is $PIOASM"
 echo "Looking for files in $in_files"
 echo "Using format $in_format with extension $ext"
 echo "Writing to $in_outdir"
@@ -43,7 +41,7 @@ for piofile in $in_files; do
     fi
 
     dest="$outpath/$(basename $piofile).$ext"
-    "$PIOASM_DIR/pioasm" "$piofile" >> $dest
+    "$PIOASM" "$piofile" >> $dest
     echo "pioasm compiled file written to $dest"
 
 done
