@@ -1,33 +1,41 @@
 #!/bin/bash
 
-# get the pico sdk
-# git clone https://github.com/raspberrypi/pico-sdk.git --branch master
-# cd pico-sdk
-# export PICO_SDK_PATH="$(pwd)"
-# cd ..
+# inputs
+in_files=$1
+in_outdir=$2
+in_format=$3
 
-# build pioasm
-# mkdir pioasm_build
-# cd pioasm_build
-# cmake "$PICO_SDK_PATH/tools/pioasm"
-# make
-# cd ..
-
-# if $2 is empty, set outpath to current dir of piofile
-if [ -z $2 ]; then
-    outpath="."
+# if $outdir is empty, set outpath to current dir of piofile
+if [ -z $in_outdir ]; then
+    outdir="."
 else
-    outpath=$2
+    outdir=$in_outdir
 fi
 
-for piofile in $1; do
+# set proper extension
+case $in_format in
+    c-sdk)
+        $ext = ".h"
+        ;;
+    python)
+        $ext = ".py"
+        ;;
+    hex)
+        $ext = ".hex"
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
+for piofile in $in_files; do
 
     if [ ! -f "$piofile" ]; then
         echo "$piofile not found; skipping"
         continue
     fi
 
-    dest="$outpath/$(basename $piofile).h"
+    dest="$outpath/$(basename $piofile).$ext"
     "$PIOASM_PATH/pioasm" "$piofile" >> $dest
     echo "pioasm compiled file written to $dest"
 

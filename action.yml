@@ -14,9 +14,15 @@ inputs:
     required: false
     default: include
 
+  format:
+    description: Output format of pioasm; c-sdk (default), python, or hex
+    required: false
+    default: c-sdk
+
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
     - ${{ inputs.files }}
     - ${{ inputs.outdir }}
+    - ${{ inputs.format }}

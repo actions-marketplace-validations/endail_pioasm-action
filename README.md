@@ -12,6 +12,10 @@ Compiles .pio files for use with a RP2040 PIO.
 
 **Required** Path to output directory. Default is `include`.
 
+### `format`
+
+**Required** pioasm output format. `c-sdk`, `python`, or `hex`. Default is `c-sdk`.
+
 ## Example usage
 
 ```yaml
@@ -37,8 +41,12 @@ jobs:
         with:
           files: src/*.pio
           outdir: include
+          format: c-sdk
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Compile .pio files
 ```
+
+## Why?
+
