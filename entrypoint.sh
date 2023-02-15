@@ -31,7 +31,7 @@ esac
 echo "PIOASM is $PIOASM"
 echo "Looking for files in $in_files"
 echo "Using format $in_format with extension $ext"
-echo "Writing to $in_outdir"
+echo "Writing to $outdir"
 
 for piofile in $in_files; do
 
@@ -40,8 +40,8 @@ for piofile in $in_files; do
         continue
     fi
 
-    dest="$outpath/$(basename $piofile).$ext"
-    "$PIOASM" "$piofile" >> $dest
-    echo "pioasm compiled file written to $dest"
+    dest="$outdir/$(basename $piofile).$ext";
+    "$PIOASM" "$piofile" >> $dest;
+    echo "pioasm compiled file written to $dest";
 
 done
