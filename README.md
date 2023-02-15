@@ -14,7 +14,7 @@ Compiles .pio files for use with a RP2040 PIO.
 
 ### `format`
 
-**Required** pioasm output format. `c-sdk`, `python`, or `hex`. Default is `c-sdk`.
+**Required** pioasm output format. `c-sdk`, `python`, `hex`, or `ada`. Default is `c-sdk`.
 
 ## Example usage
 

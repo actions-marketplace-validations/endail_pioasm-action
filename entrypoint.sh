@@ -23,6 +23,9 @@ case $in_format in
     hex)
         ext="hex"
         ;;
+    ada)
+        ext="ada"
+        ;;
     *)
         exit 1
         ;;
@@ -41,7 +44,7 @@ for piofile in $in_files; do
     fi
 
     dest="$outdir/$(basename $piofile).$ext";
-    "$PIOASM" "-o $in_format $piofile $dest";
+    "$PIOASM" -o "$in_format" "$piofile" "$dest";
     echo "pioasm compiled file written to $dest";
 
 done
