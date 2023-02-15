@@ -29,11 +29,4 @@ for piofile in $1; do
 
     pioasm_build/pioasm "$piofile" >> "$outpath/$piofile.h"
 
-    ls -al $(dirname "$piofile")
-
 done
-
-# send to gha
-#echo "out<<EOF" >> $GITHUB_OUTPUT
-#echo "$(cat out.pio.h)" >> $GITHUB_OUTPUT
-#echo "EOF" >> $GITHUB_OUTPUT
