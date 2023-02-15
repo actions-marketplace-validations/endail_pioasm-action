@@ -60,8 +60,8 @@ for piofile in $in_files; do
 
     dest="$outdir/$(basename $piofile).$ext";
     "$PIOASM" -o "$in_format" "$piofile" "$dest";
-    echo "pioasm compiled file written to $dest";
+    echo "pioasm assembled file written to $dest";
 
 done
 
-echo "finished compiling pio files";
+echo "finished assembling pio files";

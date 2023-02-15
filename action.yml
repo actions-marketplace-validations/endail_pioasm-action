@@ -1,16 +1,16 @@
 name: pioasm-action
 author: Daniel Robertson
-description: Compiles PIO files
+description: Assembles PIO files
 
 inputs:
 
   files:
-    description: Glob of files to compile
+    description: Glob of files to assemble
     required: true
     default: src/*.pio
 
   outdir:
-    description: Path to directory where compiled PIO files are stored
+    description: Path to directory where assembled PIO files are stored
     required: false
     default: include
 
