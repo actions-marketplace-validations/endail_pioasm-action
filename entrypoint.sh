@@ -36,6 +36,8 @@ echo "Looking for files in $in_files"
 echo "Using format $in_format with extension $ext"
 echo "Writing to $outdir"
 
+mkdir -p "$outdir";
+
 for piofile in $in_files; do
 
     if [ ! -f "$piofile" ]; then
@@ -44,7 +46,6 @@ for piofile in $in_files; do
     fi
 
     dest="$outdir/$(basename $piofile).$ext";
-    touch "$dest";
     "$PIOASM" -o "$in_format" "$piofile" "$dest";
     echo "pioasm compiled file written to $dest";
 
