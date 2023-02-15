@@ -29,4 +29,6 @@ for piofile in $1; do
 
     pioasm_build/pioasm "$piofile" >> "$outpath/$piofile.h"
 
+    echo "Wrote file to $outpath/$piofile.h"
+
 done
