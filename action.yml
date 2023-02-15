@@ -1,6 +1,9 @@
 name: pioasm-action
 author: Daniel Robertson
 description: Assembles PIO files
+branding:
+  icon: layers
+  color: gray-dark
 
 inputs:
 
