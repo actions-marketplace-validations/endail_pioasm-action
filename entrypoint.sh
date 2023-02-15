@@ -29,6 +29,8 @@ case $in_format in
 esac
 
 echo "PIOASM_DIR is $PIOASM_DIR"
+ls $PIOASM_DIR
+ls "$PIOASM_DIR/.."
 echo "Looking for files in $in_files"
 echo "Using format $in_format with extension $ext"
 echo "Writing to $in_outdir"
