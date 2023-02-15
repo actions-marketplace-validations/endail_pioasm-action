@@ -10,11 +10,11 @@ Compiles .pio files for use with a RP2040 PIO.
 
 ### `outdir`
 
-**Required** Path to output directory. Default is `include`.
+Path to output directory. Default is `include`.
 
 ### `format`
 
-**Required** pioasm output format. `c-sdk`, `python`, `hex`, or `ada`. Default is `c-sdk`.
+pioasm output format. `c-sdk`, `python`, `hex`, or `ada`. Default is `c-sdk`.
 
 ## Example usage
 
@@ -37,7 +37,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: endail/pioasm-action@main
+      - uses: endail/pioasm-action@v1
         with:
           files: src/*.pio
           outdir: include
@@ -46,7 +46,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Compile .pio files
+          file_pattern: include/*.h
 ```
-
-## Why?
-
