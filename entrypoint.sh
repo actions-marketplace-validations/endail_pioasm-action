@@ -27,9 +27,8 @@ for piofile in $1; do
         continue
     fi
 
-#    pioasm_build/pioasm "$piofile" >> "$outpath/$piofile.h"
-    "$PIOASM_PATH/pioasm" "$piofile" >> "$outpath/$piofile.h"
-
-    echo "pioasm compiled file written to $outpath/$piofile.h"
+    dest="$outpath/$(basename $piofile).h"
+    "$PIOASM_PATH/pioasm" "$piofile" >> $dest
+    echo "pioasm compiled file written to $dest"
 
 done
