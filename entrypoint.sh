@@ -44,6 +44,7 @@ for piofile in $in_files; do
     fi
 
     dest="$outdir/$(basename $piofile).$ext";
+    touch "$dest";
     "$PIOASM" -o "$in_format" "$piofile" "$dest";
     echo "pioasm compiled file written to $dest";
 
