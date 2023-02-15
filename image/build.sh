@@ -7,4 +7,5 @@ mkdir temp
 cd temp
 cmake "../pico-sdk/tools/pioasm"
 make
+cp pioasm /
 cd ..
