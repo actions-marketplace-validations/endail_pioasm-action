@@ -15,13 +15,13 @@ fi
 # set proper extension
 case $in_format in
     c-sdk)
-        $ext = ".h"
+        ext=".h"
         ;;
     python)
-        $ext = ".py"
+        ext=".py"
         ;;
     hex)
-        $ext = ".hex"
+        ext=".hex"
         ;;
     *)
         exit 1
