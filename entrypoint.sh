@@ -14,10 +14,10 @@ make
 cd ..
 
 # if $2 is empty, set outpath to current dir of piofile
-if [ ! -z "$2" ]; then
+if [ ! -z $2 ]; then
     outpath="."
 else
-    outpath="$2"
+    outpath=$2
 fi
 
 for piofile in $1; do
@@ -29,6 +29,6 @@ for piofile in $1; do
 
     pioasm_build/pioasm "$piofile" >> "$outpath/$piofile.h"
 
-    echo "Wrote file to $outpath/$piofile.h"
+    echo "pioasm compiled file written to $outpath/$piofile.h"
 
 done
