@@ -5,5 +5,5 @@ RUN apt install -y git make cmake gcc-arm-none-eabi libnewlib-arm-none-eabi buil
 
 COPY build.sh build_pioasm/
 RUN "$WORKDIR/build_pioasm/build.sh"
-RUN "cp $WORKDIR/build_pioasm/temp/pioasm /bin"
-ENV PIOASM="/bin/pioasm"
+RUN "cp $WORKDIR/build_pioasm/temp/pioasm /"
+ENV PIOASM="/pioasm"
