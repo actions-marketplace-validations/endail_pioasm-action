@@ -41,7 +41,7 @@ for piofile in $in_files; do
     fi
 
     dest="$outdir/$(basename $piofile).$ext";
-    "$PIOASM" "$piofile" > $dest;
+    "$PIOASM" "-o $in_format $piofile $dest";
     echo "pioasm compiled file written to $dest";
 
 done
